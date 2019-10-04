@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 @Component({
   selector: 'has-comanda',
   templateUrl: './comanda.component.html',
