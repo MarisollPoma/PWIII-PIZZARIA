@@ -8,32 +8,41 @@
 
       <div id="comanda">
         <h1> COMANDA</h1>
-        <form class="mt-5" [formGroup]="formPizza">
+        <form class="mt-5" [formGroup]="formPizza" >
           <p>
             <label> Chopp</label>
-            <input type="text" name="inChoop" />
+            <input type="text" 
+            name="inchopp"
+            formControlName="chopp"/>
 
           </p>
              
           <p>
               <label> Pizzas </label>
-              <input type="text" name="inPizzas" />
+              <input type="text" 
+              name="inPizzas"
+              formControlName="pizzas"/>
   
             </p>
             <p>
                 <label> Recheios</label>
-                <input type="text" name="inRecheios" />
+                <input type="text"
+                 name="inRecheios" 
+                 formControlName="recheios"/>
     
               </p>
               <p>
                   <label> Pessoas</label>
-                  <input type="text" name="inPessoas" />
+                  <input type="text" name="inPessoas" 
+                  formControlName="pessoas"   />
       
                 </p>
 
 
           <p class="keepcomanda">
-            <input type="checkbox" name="inServico" />
+            <input type="checkbox" name="inServico"
+            formControlName="servico" 
+            />
             <label> Taxa de Serviço</label>
 
           </p>

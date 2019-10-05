@@ -15,12 +15,39 @@ export class ComandaComponent implements OnInit {
 
   ngOnInit() {
     this.formPizza = this.formBuilder.group({
-      chopp : this.formBuilder.control('Chopp'),
-      pizzas : this.formBuilder.control('Pizzas'),
-      recheios : this.formBuilder.control('Recheios'),
-      pessoas : this.formBuilder.control('Pessoa')
-    })
-    
-  }
+      chopp : this.formBuilder.control(''),
+      pizzas : this.formBuilder.control(''),
+      recheios : this.formBuilder.control(''),
+      pessoas : this.formBuilder.control(''),
+      servico : this.formBuilder.control('false')
 
+      
+    })
+
+  }
+  onProcessar() {
+    
+    let choop = this.formPizza.value.choop;
+    let pizzas = this.formPizza.value.pizzas;
+    let recheios = this.formPizza.value.recheios;
+    let pessoas = this.formPizza.value.pessoas;
+    let servico = this.formPizza.value.servico;
+
+
+    let consumo = choop *  7.30 + pizzas * 31.50 + recheios * 5.90 ;
+    
+      if (consumo) {
+servico = consumo * 0.1 ;
+consumo = consumo + servico;       
+      }
+
+      let valorFinal = consumo + servico ;
+      let valorPessoas = valorFinal / pessoas;
+
+    
+    alert (`consumo: R$ $(consumo) \n serviços: R$  $(consumo) \n Total: R$ $(valorFinal) \n Por Pessoa: R$ $(valorPessoas) `);
+    
+
+  }
 }
+
