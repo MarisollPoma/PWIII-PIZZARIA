@@ -6,11 +6,15 @@ import { FormBuilder, FormGroup, Form } from '@angular/forms';
   templateUrl: './comanda.component.html',
   styleUrls: ['./comanda.component.css']
 })
-export class ComandaComponent implements OnInit {
 
-  constructor() { }
+export class ComandaComponent implements OnInit { 
+
+  formPizza : FormGroup;
+
+  constructor (public formBuilder: FormBuilder ) {}
 
   ngOnInit() {
+  
   }
 
 }
