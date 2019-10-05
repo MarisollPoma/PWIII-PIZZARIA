@@ -8,7 +8,7 @@
 
       <div id="comanda">
         <h1> COMANDA</h1>
-        <form class="mt-5" [formGroup]="formPizza" >
+        <form class="mt-5" [formGroup]="formPizza" (ngSubmit)="onProcessar()" >
           <p>
             <label> Chopp</label>
             <input type="text" 

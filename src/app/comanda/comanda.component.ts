@@ -19,7 +19,7 @@ export class ComandaComponent implements OnInit {
       pizzas : this.formBuilder.control(''),
       recheios : this.formBuilder.control(''),
       pessoas : this.formBuilder.control(''),
-      servico : this.formBuilder.control('false')
+      servico : this.formBuilder.control(false)
 
       
     })
@@ -27,7 +27,7 @@ export class ComandaComponent implements OnInit {
   }
   onProcessar() {
     
-    let choop = this.formPizza.value.choop;
+    let choop = this.formPizza.value.chopp;
     let pizzas = this.formPizza.value.pizzas;
     let recheios = this.formPizza.value.recheios;
     let pessoas = this.formPizza.value.pessoas;
@@ -35,17 +35,20 @@ export class ComandaComponent implements OnInit {
 
 
     let consumo = choop *  7.30 + pizzas * 31.50 + recheios * 5.90 ;
-    
-      if (consumo) {
-servico = consumo * 0.1 ;
-consumo = consumo + servico;       
+
+    let valorServico = 0;    
+
+      if (servico) {
+valorServico = consumo * 0.1 ;
+      
       }
 
-      let valorFinal = consumo + servico ;
-      let valorPessoas = valorFinal / pessoas;
+      let valorconsumo = consumo + valorServico; 
+
+      let valorPessoas = valorconsumo / pessoas;
 
     
-    alert (`consumo: R$ $(consumo) \n serviços: R$  $(consumo) \n Total: R$ $(valorFinal) \n Por Pessoa: R$ $(valorPessoas) `);
+    alert (`consumo: R$ ${consumo} \n serviços: R$  ${valorServico} \n Total: R$ ${valorconsumo} \n Por Pessoa: R$ ${valorPessoas} `);
     
 
   }
